@@ -1,0 +1,64 @@
+The course has been recorded for Django 1.x and 2.x where as the 
+current version of Django is 4.x. So you will need to put a little
+more effort and time to find the equivalent changes in code in 
+Django official documentation website to get your code up and 
+running.
+
+pip install virtualenv
+
+py --version
+
+(cd to dir)
+py -m venv env - create virtual environment named env
+env\scripts\activate - to run env
+(env) C:\Users\andre\Desktop\Workspace\my_django_app>
+(the name of the env will be on the left side)
+pip install django
+django-admin startproject my_django_app - start the django project 
+cd my_django_app
+(env) C:\Users\andre\Desktop\Workspace\my_django_app\my_django_app>
+python manage.py startapp hello - start an app for this project 
+--> creates another directory called "hello"
+- go to my_django_app settings.py -->
+- add to the list of installed apps 'hello' (new created app)
+python manage.py runserver - start the server
+
+--->
+--->
+--->
+(env) C:\Users\andre\Desktop\Workspace\my_django_app\my_django_app>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+July 27, 2022 - 20:54:27
+Django version 4.0.6, using settings 'my_django_app.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+!!!Starting development server at http://127.0.0.1:8000/
+
+go to http://127.0.0.1:8000/
+
+--> install worked successfully
+
+http://127.0.0.1:8000/admin
+
+ctrl c stops server
+
+- need to migrate (user needs to be saved to the database)
+python manage.py migrate
+python manage.py createsuperuser
+
+Username (leave blank to use 'andre'): brasea
+Email address: andrewbrase1@yahoo.com
+pass newchey56!!!
+
+-- run server again
+
+-- login
+
+add

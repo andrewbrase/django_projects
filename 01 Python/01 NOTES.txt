@@ -1,0 +1,3 @@
+How Django works
+user will request a URL --> that request goes to a urls.py file --> that will call the views.py file --> that will call the models.py file which contains the information of your database (SQLite)
+ --> FEED BACK to views.py (which creates the view of your website) use templates to fill out that view (HTML, CSS, Javascript)
