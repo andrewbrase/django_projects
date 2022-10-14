@@ -218,3 +218,7 @@ original index() function inside of our
 views.py file.
 ● Let’s now code through everything we
 just discussed!
+
+-if this folder shows Contains emphasized items 
+Use the command, CTRL+SHIFT+P on windows or COMMAND+SHIFT+P 
+on mac, then search "Developer: reload window", click on it
