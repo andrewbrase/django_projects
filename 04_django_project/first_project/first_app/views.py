@@ -4,5 +4,5 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    my_dict = {'insert_me':'this is from the views.py file in the app'}
-    return render( request, 'index.html', context= my_dict )
+    my_dict = {'insert_me':'this is from the views.py file in the app, this is the template tag'}
+    return render( request, 'first_app/index.html', context= my_dict )
