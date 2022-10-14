@@ -18,3 +18,12 @@ store our static image files
 called images
 ● Place a favorite .jpg file inside this images
 directory (or just download one)
+
+
+
+
+>python manage.py migrate
+>python manage.py makemigrations static_media_app
+>python manage.py migrate
+
+7:18
