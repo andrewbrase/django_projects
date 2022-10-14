@@ -12,9 +12,18 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+# video 122
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# this is a key indicating this settings file
+# print(__file__)
+# using the os module to create the path to this settings file, this is used
+# so that any operating system can have a file path, not just windows file path
+# print(os.path.abspath(__file__))
+
+# just created the templates folder, we should not do (BASE_DIR + "\templates"), its not going to work on all operating systems
+TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -55,7 +64,7 @@ ROOT_URLCONF = 'first_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
