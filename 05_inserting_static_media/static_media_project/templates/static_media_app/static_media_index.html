@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,5 +10,8 @@
 <body>
     <h1>Test of static Media</h1>
     {{ temp_tag_one }}
+
+    <h2>this image is loaded from the static/images file </h2>
+    <img src="{% static 'images/lizard.jpg' %}" alt="Image not found" width="400px" height="250px">
 </body>
 </html>
