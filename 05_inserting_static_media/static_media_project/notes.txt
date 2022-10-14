@@ -1,0 +1,20 @@
+So far we’ve used templates to insert
+simple text.
+● But we don’t always just want text, what
+about other types of media, for example,
+returning a User’s Photo?
+● Let’s discuss static media files!
+
+To do this, we will create a new directory
+inside of the project called static ( just like
+we did for templates)
+● Then we will add this directory path to the
+project’s settings.py file
+● We will also add a STATIC_URL variable
+
+Once we’ve done that we need a place to
+store our static image files
+● We create a directory inside of static
+called images
+● Place a favorite .jpg file inside this images
+directory (or just download one)
