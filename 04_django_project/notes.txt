@@ -1,0 +1,172 @@
+django setup
+conda create --name myDjangoEnv python=3.5
+
+To activate this environment, use
+#
+#     $ conda activate myDjangoEnv
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+conda info --envs (to see environments)
+
+~~~~~~~~~~~~~~~~~~~~~~
+django-admin startproject first_project
+- when you create the project you get these files
+
+- __init__.py - This is a blank Python
+script that due to its
+special name let’s
+Python know that this
+directory can be treated
+as a package
+
+- settings.py - This is where you will
+store all your project
+settings
+
+- urls.py - This is a Python script
+that will store all the
+URL patterns for your
+project. Basically the
+different pages of your
+web application.
+
+- wsgi - This is a Python script
+that acts as the Web
+Server Gateway
+Interface. It will later on
+help us deploy our web
+app to production
+
+- manage.py - This is a Python script
+that we will use a lot. It
+will be associates with
+many commands as we
+build our web app!
+
+
+how to start up server - cd into project folder
+python manage.py runserver
+
+~~~~~~~~~~~~~~~~~~~~~~
+within the django project- we are creating a django application
+python manage.py startapp first_app
+
+when you create the app go back to your code- there will be a new file with :
+
+(another) __init__.py - this is a blank python script that due to its special name lets python know that this directory can be treated as a package
+
+-views.py - This is where you have
+functions that handle
+requests and return
+responses
+
+-tests.py - Here you can store test
+functions to test your
+code
+
+-models.py - Here you store the
+application’s data
+models
+
+-apps.py - Here you can place
+application specific
+configurations
+
+-admin.py - You can register your
+models here which
+Django will then use
+them with Django’s
+admin interface.
+
+- migrations folder -
+This directory stores
+database specific
+information as it relates
+to the models
+
+- Now we need to tell Django that we just created this app, so we will
+ go back to the settings.py file in the project and add in that first app
+~~~~~~~~~~~~~~~~~~~~~~
+go to installed apps list in the settings folder, we need to add in the
+first app
+~~~~~~~~~~~~~~~~~~~~~~
+now we want to create our first view
+go to views.py in the app folder
+
+each view will exist inside of that views.py file as a function
+
+>
+from django.http import HttpResponse
+def index(request):
+    return HttpResponse('Test of HttpResponse')
+
+we created one view called index, each view will take in an argument
+- usually request
+
+you can actually return html content as well 
+~~~~~~~~~~~~~~~~~~~~~~
+go to urls.py in the project folder
+
+(this is instructions inside)
+"""first_project URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/2.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+
+>
+from first_app import views
+from django.conf.urls import url
+(not included when created??)
+
+add in the urlpatterns list - (we will be using regular expressions)
+url(r'^$', views.index, name = 'index'),
+
+video 121 next
+http://127.0.0.1:8000/first_app/
+(the apps can have thir own url.py file that we can then call from the 
+projects url patterns
+
+create urls.py in app-
+>
+from django.conf.urls import url
+from first_app import views
+
+urlpatterns = [
+    url(r'^$',views.index,name='index'),
+]
+
+>project urls.py
+from django.contrib import admin
+from django.urls import path
+
+from django.conf.urls import include
+from django.conf.urls import url
+
+from first_app import views
+urlpatterns = [
+    url(r'^$', views.index, name = 'index'),
+    url(r'^newextension/', include('first_app.urls')),
+    path('admin/', admin.site.urls),
+]
+~~~~~~~~~~~~~~~~~~~~~~
+Django templates
+the Template  will conatin the static parts of an html page
+skeleton of the page
+
+then there are Template Tags, which have their own special syntax.
+this sytnax allows you to inject dynamic content that your django
+apps view will produce, effecting the final html
