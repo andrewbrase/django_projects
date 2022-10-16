@@ -109,3 +109,50 @@
 #     print('this code is complete')
     # this code is complete
 
+# while loops
+
+# x = 0
+# while(x < 11):
+#     print(f'x is equal to {x}')
+#     x += 1
+
+# x is equal to 0
+# x is equal to 1
+# x is equal to 2
+# x is equal to 3
+# x is equal to 4
+# x is equal to 5
+# x is equal to 6
+# x is equal to 7
+# x is equal to 8
+# x is equal to 9
+# x is equal to 10
+
+# reading from external files
+# file path, file mode (read, write, append(you can append info to the end, you can only add new info), r+ (read and write))
+# file_cont = open('01_refresh.txt', 'r')
+
+# how to get info from the file
+# print(file_cont.readable())
+# True
+# this will return a boolean value to indicate if the file is readable
+
+# how to read the first line
+# print(file_cont.readline())
+# print(file_cont.readline())
+# this is from the refresh.txt file
+# this is the second line
+
+# theres a better function for reading multiple lines
+# this will insert every line into an list
+# print(file_cont.readlines())
+# ['this is from the refresh.txt file\n', 'this is the second line']
+
+# you can use this with a for loop
+# for line in file_cont.readlines():
+#     print(line)
+    # this is from the refresh.txt file
+    # this is the second line 
+
+# when you open a file you want to make sure that you close it as well
+# file_cont.close()
