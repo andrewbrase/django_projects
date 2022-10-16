@@ -79,14 +79,33 @@
 
 # exponent function
 # user can decide if they want it squared, cubed etc with pow_num
-def raise_to_power(base_num, pow_num):
-    result = 1
+# def raise_to_power(base_num, pow_num):
+#     result = 1
     # we will loop through the loop the number of pow_num
     # that could be 2 or 3 etc
-    for index in range(pow_num):
-        result = result * base_num
+#     for index in range(pow_num):
+#         result = result * base_num
 
-    return result
+#     return result
 
-print(raise_to_power(10,3))
+# print(raise_to_power(10,3))
 # 1000
+
+# catching errors
+
+# number = int(input('enter in a number'))
+# ValueError: invalid literal for int() with base 10: 'h'
+# use a try except block
+
+# try:
+#     number = int(input('enter in a number : '))
+#     print(f'your number is : {number}')
+    # enter in a number : 3
+    # your number is : 3
+# except:
+#     print('invalid input, please use a number')
+    # invalid input, please use a number
+# finally:
+#     print('this code is complete')
+    # this code is complete
+
