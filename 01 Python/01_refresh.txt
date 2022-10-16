@@ -1,2 +1,3 @@
 this is from the refresh.txt file
 this is the second line
+this is another line added with a

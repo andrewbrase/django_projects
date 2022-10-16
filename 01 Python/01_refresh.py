@@ -1,4 +1,3 @@
-
 # newlist = ['andrew','steve','dan']
 # secondlist = ['oscar','jake']
 # newlist.extend(secondlist)
@@ -9,6 +8,7 @@
 # def squared(num):
 #     return num**2
 
+# ~~~~~~~~~~~~~~~~~
 # map
 # numlist = [1,2,3,4,5,6,7,8,9,10]
 # results = list(map(squared, numlist))
@@ -24,6 +24,7 @@
 # print(filtered)
 # [4, 16, 36, 64, 100]
 
+# ~~~~~~~~~~~~~~~~~
 # print(filtered.pop())
 # returns the last item of a list (100)
 
@@ -49,10 +50,12 @@
 # print(numlist)
 # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+# ~~~~~~~~~~~~~~~~~
 # tuples
 # coordinates = (4, 5)
 # tuples are immutable
 
+# ~~~~~~~~~~~~~~~~~
 # dictionaries
 # bank = {'jake':1020,
 #         'caleb':2340,
@@ -77,6 +80,7 @@
 # print(numrange)
 # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+# ~~~~~~~~~~~~~~~~~
 # exponent function
 # user can decide if they want it squared, cubed etc with pow_num
 # def raise_to_power(base_num, pow_num):
@@ -91,6 +95,7 @@
 # print(raise_to_power(10,3))
 # 1000
 
+# ~~~~~~~~~~~~~~~~~
 # catching errors
 
 # number = int(input('enter in a number'))
@@ -109,6 +114,7 @@
 #     print('this code is complete')
     # this code is complete
 
+# ~~~~~~~~~~~~~~~~~
 # while loops
 
 # x = 0
@@ -128,6 +134,7 @@
 # x is equal to 9
 # x is equal to 10
 
+# ~~~~~~~~~~~~~~~~~
 # reading from external files
 # file path, file mode (read, write, append(you can append info to the end, you can only add new info), r+ (read and write))
 # file_cont = open('01_refresh.txt', 'r')
@@ -156,3 +163,51 @@
 
 # when you open a file you want to make sure that you close it as well
 # file_cont.close()
+
+# going to add some text to the end of a file with append
+# file_cont = open('01_refresh.txt','r+')
+# file_cont.write('\nthis is another line added with a')
+# for line in file_cont.readlines():
+#     print(line)
+# file_cont.close()
+
+# this is from the refresh.txt file
+# this is the second line
+# this is another line added with a
+
+# ~~~~~~~~~~~~~~~~~
+# importing modules
+# import usefultools
+
+# print(usefultools.feet_in_mile)
+# 5280
+
+# print(f'you rolled a {usefultools.roll_dice(6)}')
+# you rolled a 6
+
+# this link will take you to python modules
+# https://docs.python.org/3/py-modindex.html
+# ~~~~~~~~~~~~~~~~~
+
+# classes and objects
+# with a class you can define your own data type
+
+# ! a template for an object !
+class Person:
+    # we want to create an initialize function
+    # in this init function you can define the properties a person should have
+    # the argument after self can accept what we can defien a person as
+    def __init__(self, name, height, hair_color, eye_color):
+        self.name = name
+        self.height = height
+        self.hair_color = hair_color
+        self.eye_color = eye_color
+    
+    def printPerson(self):
+        print(f'{self.name} is {self.height} feet tall, they have {self.hair_color} hair and {self.eye_color} colored eyes')
+
+# ! the object !
+Jim = Person('Jim', "5' 11''", 'brown', 'green')
+
+Jim.printPerson()
+# Jim is 5' 11'' feet tall, they have brown hair and green colored eyes
