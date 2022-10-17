@@ -207,7 +207,32 @@ class Person:
         print(f'{self.name} is {self.height} feet tall, they have {self.hair_color} hair and {self.eye_color} colored eyes')
 
 # ! the object !
-Jim = Person('Jim', "5' 11''", 'brown', 'green')
+# Jim = Person('Jim', "5' 11''", 'brown', 'green')
 
-Jim.printPerson()
+# Jim.printPerson()
 # Jim is 5' 11'' feet tall, they have brown hair and green colored eyes
+
+# inheritance
+# we can define a bunch of values 
+# and functions in a class and make 
+# a new class with those already 
+# inside of the new one, but we can 
+# add new values and functions
+
+# so as a chef you are still a person so
+# we can inherit the person attributes and functions
+class Chef(Person):
+    def __init__(self, name, height, hair_color, eye_color):
+        self.job = 'Chef'
+        super().__init__(name, height, hair_color, eye_color)
+
+    def make_fried_rice(self):
+        print(f'{self.name} is making fried rice, did you know that they are a {self.job}')
+
+Fred = Chef('Fred', "5' 10''", 'red', 'brown')
+
+Fred.printPerson()
+Fred.make_fried_rice()
+
+# Fred is 5' 10'' feet tall, they have red hair and brown colored eyes
+# Fred is making fried rice, did you know that they are a Chef
