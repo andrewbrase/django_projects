@@ -1,16 +1,14 @@
-from enum import unique
 from django.db import models
 
-# Create your models here.
 class Topic(models.Model):
-    top_name = models.CharField(max_length = 20, unique=True)
+    top_name = models.CharField(max_length=20, unique=True)
 
     def __str__(self):
         return self.top_name
 
 class Webpage(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
-    name = models.CharField(max_length = 20, unique=True)
+    name = models.CharField(max_length=20, unique=True)
     url = models.URLField(unique=True)
 
     def __str__(self):
@@ -22,3 +20,19 @@ class AccessRecord(models.Model):
 
     def __str__(self):
         return str(self.date)
+
+# After you define the models, 
+# Django will build out the SQL 
+# database through a series of 
+# commands
+
+# (activate the env)
+# in that project folder call 
+# > python manage.py migrate
+# > python manage.py makemigrations static_media_app
+# > python manage.py migrate
+
+# now our models should be connected to 
+# a SQL database that Django has made for us
+# and registered the changes to our app
+
