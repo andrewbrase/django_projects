@@ -193,18 +193,18 @@
 # with a class you can define your own data type
 
 # ! a template for an object !
-class Person:
+# class Person:
     # we want to create an initialize function
     # in this init function you can define the properties a person should have
     # the argument after self can accept what we can defien a person as
-    def __init__(self, name, height, hair_color, eye_color):
-        self.name = name
-        self.height = height
-        self.hair_color = hair_color
-        self.eye_color = eye_color
+    # def __init__(self, name, height, hair_color, eye_color):
+    #     self.name = name
+    #     self.height = height
+    #     self.hair_color = hair_color
+    #     self.eye_color = eye_color
     
-    def printPerson(self):
-        print(f'{self.name} is {self.height} feet tall, they have {self.hair_color} hair and {self.eye_color} colored eyes')
+    # def printPerson(self):
+    #     print(f'{self.name} is {self.height} feet tall, they have {self.hair_color} hair and {self.eye_color} colored eyes')
 
 # ! the object !
 # Jim = Person('Jim', "5' 11''", 'brown', 'green')
@@ -221,18 +221,41 @@ class Person:
 
 # so as a chef you are still a person so
 # we can inherit the person attributes and functions
-class Chef(Person):
-    def __init__(self, name, height, hair_color, eye_color):
-        self.job = 'Chef'
-        super().__init__(name, height, hair_color, eye_color)
+# class Chef(Person):
+#     def __init__(self, name, height, hair_color, eye_color):
+#         self.job = 'Chef'
+#         super().__init__(name, height, hair_color, eye_color)
 
-    def make_fried_rice(self):
-        print(f'{self.name} is making fried rice, did you know that they are a {self.job}')
+#     def make_fried_rice(self):
+#         print(f'{self.name} is making fried rice, did you know that they are a {self.job}')
 
-Fred = Chef('Fred', "5' 10''", 'red', 'brown')
+# Fred = Chef('Fred', "5' 10''", 'red', 'brown')
 
-Fred.printPerson()
-Fred.make_fried_rice()
+# Fred.printPerson()
+# Fred.make_fried_rice()
 
 # Fred is 5' 10'' feet tall, they have red hair and brown colored eyes
 # Fred is making fried rice, did you know that they are a Chef
+
+# ~~~~~~~~~~~~~~~~~
+# use lambda as an anonymous function inside another function
+
+# addTwo = lambda a , b : a + b
+# print(addTwo(5,5))
+# 10
+
+# Say you have a function definition that takes one argument, and that argument will be multiplied with an unknown number
+# def myfunc(n):
+#   return lambda a : a * n
+
+# mydoubler = myfunc(2)
+# print(mydoubler(11))
+# 22
+
+def mynewfunc(num):
+    return lambda a : a * num
+
+mytripler = mynewfunc(3)
+print(mytripler(100))
+# 300
+
