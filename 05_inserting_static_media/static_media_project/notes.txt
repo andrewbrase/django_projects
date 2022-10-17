@@ -1,3 +1,27 @@
+The command - python manage.py diffsettings 
+- displays differences between the current settings file and Django’s default settings.
+(activate myDjangoEnv)
+
+AUTH_PASSWORD_VALIDATORS = [{'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'}, {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'}, {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'}, {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'}]
+BASE_DIR = 'C:\\Users\\brasea\\Desktop\\Workspace\\django_projects\\django_projects\\05_inserting_static_media\\static_media_project'  ###
+DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3', 'USER': '', 'OPTIONS': {}, 'ATOMIC_REQUESTS': False, 'AUTOCOMMIT': True, 'TIME_ZONE': None, 'PASSWORD': '', 'HOST': '', 'NAME': 'C:\\Users\\brasea\\Desktop\\Workspace\\django_projects\\django_projects\\05_inserting_static_media\\static_media_project\\db.sqlite3', 'TEST': {'CHARSET': None, 'COLLATION': None, 'MIRROR': None, 'NAME': None}, 'PORT': '', 'CONN_MAX_AGE': 0}}
+DEBUG = True
+INSTALLED_APPS = ['django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.messages', 'django.contrib.staticfiles', 'static_media_app']
+MIDDLEWARE = ['django.middleware.security.SecurityMiddleware', 'django.contrib.sessions.middleware.SessionMiddleware', 'django.middleware.common.CommonMiddleware', 'django.middleware.csrf.CsrfViewMiddleware', 'django.contrib.auth.middleware.AuthenticationMiddleware', 'django.contrib.messages.middleware.MessageMiddleware', 'django.middleware.clickjacking.XFrameOptionsMiddleware']
+ROOT_URLCONF = 'static_media_project.urls'  ###
+SECRET_KEY = '$+*1(&v9z*xc&4)1*$_6&e#$22d0*eug)l@*ff%u_ckk07f^34'
+SETTINGS_MODULE = 'static_media_project.settings'  ###
+STATICFILES_DIRS = ['C:\\Users\\brasea\\Desktop\\Workspace\\django_projects\\django_projects\\05_inserting_static_media\\static_media_project\\static']
+STATIC_DIR = 'C:\\Users\\brasea\\Desktop\\Workspace\\django_projects\\django_projects\\05_inserting_static_media\\static_media_project\\static'  ###
+STATIC_URL = '/static/'
+TEMPLATE = 1  ###
+TEMPLATES = [{'DIRS': ['C:\\Users\\brasea\\Desktop\\Workspace\\django_projects\\django_projects\\05_inserting_static_media\\static_media_project\\templates'], 'OPTIONS': {'context_processors': ['django.template.context_processors.debug', 'django.template.context_processors.request', 'django.contrib.auth.context_processors.auth', 'django.contrib.messages.context_processors.messages']}, 'BACKEND': 'django.template.backends.django.DjangoTemplates', 'APP_DIRS': True}]
+TEMPLATE_DIR = 'C:\\Users\\brasea\\Desktop\\Workspace\\django_projects\\django_projects\\05_inserting_static_media\\static_media_project\\templates'  ###
+TIME_ZONE = 'UTC'
+USE_L10N = True
+USE_TZ = True
+WSGI_APPLICATION = 'static_media_project.wsgi.application'
+
 So far we’ve used templates to insert
 simple text.
 ● But we don’t always just want text, what
@@ -18,9 +42,6 @@ store our static image files
 called images
 ● Place a favorite .jpg file inside this images
 directory (or just download one)
-
-
-
 
 >python manage.py migrate
 >python manage.py makemigrations static_media_app
