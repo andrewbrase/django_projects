@@ -252,10 +252,17 @@
 # print(mydoubler(11))
 # 22
 
-def mynewfunc(num):
-    return lambda a : a * num
+# def mynewfunc(num):
+#     return lambda a : a * num
 
-mytripler = mynewfunc(3)
-print(mytripler(100))
+# mytripler = mynewfunc(3)
+# print(mytripler(100))
 # 300
 
+# using the zip function to take in iterables and aggregate them in a tuple
+languages = ['Java', 'Python', 'Javascript']
+versions = [14, 3, 6]
+
+result = zip(languages, versions)
+print(list(result))
+# [('Java', 14), ('Python', 3), ('Javascript', 6)]
