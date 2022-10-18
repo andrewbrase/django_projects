@@ -137,3 +137,10 @@ user based off the connect of the models, views and templates.
 First: In the views.py file we import any models that we will need to use
 Second: Use the view to query the model for data that we will need 
 Third: Pass resuls from the model into the template
+Fourth: Edit the template so that it is ready to accept and display the data from the model
+Fifth: Map a URL to the view
+
+add
+from static_media_app.models import Topic, Webpage, AccessRecord
+to static_media_app.views
+130. 3:00
