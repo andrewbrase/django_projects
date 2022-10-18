@@ -36,3 +36,35 @@ class AccessRecord(models.Model):
 # a SQL database that Django has made for us
 # and registered the changes to our app
 
+# how to look at that database - 
+# create some test data with some shell commands
+# using python at the shell we can interact with
+# our database
+
+# > python manage.py shell
+# this will open up an interactive shell
+
+# >>> from static_media_app.models import Topic
+# >>> print(Topic.objects.all())
+# <QuerySet []>
+# >>>
+
+# you'll get nothing back from the first time,
+# lets create something
+
+# (making a new Topic)
+# >>> t = Topic(top_name="Social Network")
+# >>> t.save()
+# ( .save() is inherited from the model.Models class)
+
+# if we try to print out all of the topic objects we now get this
+# >>> print(Topic.objects.all())
+# <QuerySet [<Topic: Social Network>]>
+# >>>
+# >>> quit()
+
+# so far we've created models and the database behind it
+# we actually used shell commands to add something
+# we're not going to be using the shell everytime we want to add, view the database
+# in order to have more convieneance we'll use the admin interface
+
