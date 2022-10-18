@@ -16,6 +16,9 @@ Including another URLconf
 # from django.contrib import admin
 # from django.urls import path
 
+# Django also provides a way to navigate around the different pages in a website.
+# When a user requests a URL, Django decides which view it will send it to.
+
 from django.contrib import admin
 from django.urls import path
 

@@ -1,3 +1,8 @@
+<!-- A template is a file where you describe how the result should be represented.
+Templates are often .html files, with HTML code describing the layout of a web page, but it can also be in other file formats to present other results, but we will concentrate on .html files. -->
+<!-- Django uses standard HTML to describe the layout, but uses Django tags to add logic: -->
+
+<!-- This was for the static media files -->
 <!-- <!DOCTYPE html>
 {% load staticfiles %}
 <html lang="en">
@@ -17,6 +22,7 @@
 </body>
 </html> -->
 
+<!-- this is for the models section -->
 <!DOCTYPE html>
 {% load staticfiles %}
 <html lang="en">
@@ -25,7 +31,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django MTV Paradigm</title>
+    <title>Django MVT Paradigm</title>
     <link rel="stylesheet" href="{% static 'css/static.css'%}">
 </head>
 

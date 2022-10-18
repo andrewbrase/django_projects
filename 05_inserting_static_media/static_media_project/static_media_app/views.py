@@ -2,6 +2,11 @@ from django.shortcuts import render
 from static_media_app.models import Topic, Webpage, AccessRecord
 
 # Create your views here.
+
+# A view is a function or method that takes http requests as 
+# arguments, imports the relevant model(s), and finds out what 
+# data to send to the template, and returns the final result.
+
 def index(request):
 
     webpages_list = AccessRecord.objects.order_by('date')
