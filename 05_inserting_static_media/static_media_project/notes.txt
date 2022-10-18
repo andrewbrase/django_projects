@@ -43,8 +43,97 @@ called images
 ● Place a favorite .jpg file inside this images
 directory (or just download one)
 
+continue with the templates lecture for more info,
+forgot to finish the notes for this section
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+working with models
+
+from django.db import models
+
+class Topic(models.Model):
+    top_name = models.CharField(max_length=20, unique=True)
+
+    def __str__(self):
+        return self.top_name
+
+class Webpage(models.Model):
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    name = models.CharField(max_length=20, unique=True)
+    url = models.URLField(unique=True)
+
+    def __str__(self):
+        return self.name
+
+class AccessRecord(models.Model):
+    name = models.ForeignKey(Webpage, on_delete=models.CASCADE)
+    date = models.DateField()
+
+    def __str__(self):
+        return str(self.date)
+
 >python manage.py migrate
 >python manage.py makemigrations static_media_app
 >python manage.py migrate
 
-7:18
+After you define the models, 
+Django will build out the SQL 
+database through a series of 
+commands
+
+(activate the env)
+in that project folder call 
+> python manage.py migrate
+> python manage.py makemigrations static_media_app
+> python manage.py migrate
+
+now our models should be connected to 
+a SQL database that Django has made for us
+and registered the changes to our app
+
+how to look at that database - 
+create some test data with some shell commands
+using python at the shell we can interact with
+our database
+
+> python manage.py shell
+this will open up an interactive shell
+
+>>> from static_media_app.models import Topic
+>>> print(Topic.objects.all())
+<QuerySet []>
+>>>
+
+you'll get nothing back from the first time,
+lets create something
+
+(making a new Topic)
+>>> t = Topic(top_name="Social Network")
+>>> t.save()
+( .save() is inherited from the model.Models class)
+
+if we try to print out all of the topic objects we now get this
+>>> print(Topic.objects.all())
+<QuerySet [<Topic: Social Network>]>
+>>>
+>>> quit()
+
+so far we've created models and the database behind it
+we actually used shell commands to add something
+we're not going to be using the shell everytime we want to add, view the database
+in order to have more convieneance we'll use the admin interface
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+130. Models-Templates-Views Paradigm
+
+Django operates on what is known as Models-Templates-Views (MTV)
+(MTV) encompasses the idea of how to connect everything we've talked
+about so far: models, templates, and views
+
+- There are a few basic steps to achieving
+the goal of serving dynamic conetnt to a 
+user based off the connect of the models, views and templates.
+
+First: In the views.py file we import any models that we will need to use
+Second: Use the view to query the model for data that we will need 
+Third: Pass resuls from the model into the template
