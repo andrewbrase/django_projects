@@ -12,5 +12,9 @@ def index(request):
     webpages_list = AccessRecord.objects.order_by('date')
     date_dict = {'access_records':webpages_list}
 
-    # template_tag = {'temp_tag_one':'this is from the views.py file in the app, this is a template tag'}
+    # The models are imported from the models.py file.
+    # The view then sends the data to a specified template in the template folder.
     return render( request, 'static_media_app/static_media_index.html', date_dict)
+
+    # (for the first project)
+    # template_tag = {'temp_tag_one':'this is from the views.py file in the app, this is a template tag'}
