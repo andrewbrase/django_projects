@@ -1,7 +1,15 @@
+How does Django Work?
+Django follows the MVT design pattern (Model View Template).
+
+Model - The data you want to present, usually data from a database.
+View - A request handler that returns the relevant template and content - based on the request from the user.
+Template - A text file (like an HTML file) containing the layout of the web page, with logic on how to display the data.
+
 The command - python manage.py diffsettings 
 - displays differences between the current settings file and Django’s default settings.
 (activate myDjangoEnv)
 
+- Changes that have been made since the project was created
 AUTH_PASSWORD_VALIDATORS = [{'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'}, {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'}, {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'}, {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'}]
 BASE_DIR = 'C:\\Users\\brasea\\Desktop\\Workspace\\django_projects\\django_projects\\05_inserting_static_media\\static_media_project'  ###
 DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3', 'USER': '', 'OPTIONS': {}, 'ATOMIC_REQUESTS': False, 'AUTOCOMMIT': True, 'TIME_ZONE': None, 'PASSWORD': '', 'HOST': '', 'NAME': 'C:\\Users\\brasea\\Desktop\\Workspace\\django_projects\\django_projects\\05_inserting_static_media\\static_media_project\\db.sqlite3', 'TEST': {'CHARSET': None, 'COLLATION': None, 'MIRROR': None, 'NAME': None}, 'PORT': '', 'CONN_MAX_AGE': 0}}
