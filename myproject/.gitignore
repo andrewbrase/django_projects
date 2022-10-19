@@ -1,0 +1,7 @@
+Lib/
+Scripts/
+Include/
+Django_Forms_Project/db.sqlite3
+Django_Forms_Project/Django_Forms_Project/__pycache__
+Django_Forms_Project/Django_Forms_app/__pycache__
+Django_Forms_Project/Django_Forms_app/migrations
