@@ -1,1 +1,0 @@
-left off at https://www.w3schools.com/django/django_views.php

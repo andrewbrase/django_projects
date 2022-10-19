@@ -1,0 +1,5 @@
+> python -m venv {name}
+cd into the scripts folder
+> activate
+(install packages)
+> python -m pip install {package-name}
