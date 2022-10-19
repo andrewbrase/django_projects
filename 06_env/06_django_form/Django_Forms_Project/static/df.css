@@ -1,0 +1,13 @@
+body{
+    background-color: rgb(224, 199, 174);
+}
+
+table {
+    background-color: rgb(238, 223, 209);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+td {
+    padding-left: 10px;
+}

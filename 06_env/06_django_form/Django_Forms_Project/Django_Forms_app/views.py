@@ -7,12 +7,15 @@ from .models import Members
 
 def index(request):
     # return HttpResponse("Hello world!")
-
-    # template = loader.get_template('df.html')
     # return HttpResponse(template.render())
 
     mymembers = Members.objects.all().values()
-    output = ""
-    for member in mymembers:
-        output += member["firstname"]
-    return HttpResponse(output)
+    template = loader.get_template('df.html')
+    context = {
+        'mymembers_t' : mymembers,
+    }
+    return HttpResponse(template.render(context, request))
+    # output = ""
+    # for member in mymembers:
+    #     output += member["firstname"]
+    # return HttpResponse(output)
