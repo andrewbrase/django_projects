@@ -1,13 +1,11 @@
-body{
-    background-color: rgb(224, 199, 174);
-}
-
-table {
-    background-color: rgb(238, 223, 209);
-    border-radius: 15px;
+.members-table {
+    font-size: 25px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 5px;
     padding: 10px;
 }
 
 td {
+    padding: 5px;
     padding-left: 10px;
 }
