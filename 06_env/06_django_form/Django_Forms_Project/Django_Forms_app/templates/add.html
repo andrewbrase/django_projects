@@ -1,5 +1,36 @@
-<h1>Add member</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<form action="addrecord/" method="post">
-    
-</form>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Member</title>
+
+</head>
+
+<body>
+    <h1>Add member</h1>
+
+    <form action="addrecord/" method="post">
+
+        <!-- Did you notice the action 
+            attribute in the HTML form? 
+            The action attribute specifies 
+            where to send the form data, in 
+            this case the form data will be 
+            sent to addrecord/, so we must 
+            add a path() function in the 
+            Django_Forms_app/urls.py file that 
+            points to the right view: -->
+
+        {% csrf_token %}
+        <input name="first" placeholder="First Name">
+        <input name="last" placeholder="Last Name">
+        <input type="submit" value="Submit">
+        <a href="/">Return Home</a>
+
+    </form>
+</body>
+
+</html>

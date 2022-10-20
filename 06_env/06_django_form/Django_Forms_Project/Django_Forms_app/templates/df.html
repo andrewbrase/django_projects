@@ -20,10 +20,12 @@
 
         <table>
             {% for x in mymembers_t %}
-            <tr>
-                <td>{{x.id}}</td>
+            <tr class="table-row">
+                <td><a href="update/{{ x.id }}">Id: {{ x.id }}</a></td>
+                <!-- <td>{{x.id}}</td> -->
                 <td>{{x.firstname}}</td>
                 <td>{{x.lastname}}</td>
+                <td><a href="delete/{{ x.id }}">Delete</a></td>
             </tr>
 
             {% endfor %}
