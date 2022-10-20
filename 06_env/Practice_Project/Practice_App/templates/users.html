@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Page</title>
+</head>
+<body>
+    <h1>Here are all of the users</h1>
+    {% if users_t %}
+    <ol>
+        {% for person in users_t %}
+        <li>User Info</li>
+        <ul>
+            <li>First name : {{ person.firstname }}</li>
+            <li>Last name : {{ person.lastname }}</li>
+            <li>Email: {{ person.email }}</li>
+        </ul>
+        {% endfor %}
+    </ol>
+    {% endif %}
+
+    
+</body>
+</html>
