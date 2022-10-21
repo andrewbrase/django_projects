@@ -8,5 +8,33 @@
 </head>
 <body>
     <h1>Cart</h1>
+
+    {% if cart_t %}
+    <ol>
+        {% for item in cart_t %}
+        <li>Item info</li>
+        <ul>
+            <!-- <li>Item name: {{ item.item_name }}</li> -->
+            <!-- <li>Qty: {{ item.quantity }}</li> -->
+        </ul>
+        {% endfor %}
+    </ol>
+    {% endif %}
+
+
+    <!-- {% if users_t %}
+    <ol>
+        {% for person in users_t %}
+        <li>User Info</li>
+        <ul>
+            <li>First name : {{ person.firstname }}</li>
+            <li>Last name : {{ person.lastname }}</li>
+            <li>Email: {{ person.email }}</li>
+        </ul>
+        {% endfor %}
+    </ol>
+    {% endif %} -->
+
+
 </body>
 </html>
