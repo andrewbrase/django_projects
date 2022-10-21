@@ -5,13 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forms</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
+<body style="margin-left: 30px; margin-top: 30px;">
+    <h1> Fill out the form</h1>
     <div class="container">
-        {{form_t}}
+        <form method="post">
+            <!-- form elements are going to be in P tags to space out from top to bottom-->
+            {{form_t.as_p}}
+            {% csrf_token %}
+            <input type="submit" class="btn bty-primary" value="Submit">
+        </form>
     </div>
-
-    <!-- 9:37 - (135) -->
-
 </body>
 </html>

@@ -8,3 +8,5 @@ def index(request):
 def form_name_view(request):
     form = forms.FormName()
     return render(request, 'form_page.html', {'form_t' : form})
+
+    # we need to save the POST data 13:54
