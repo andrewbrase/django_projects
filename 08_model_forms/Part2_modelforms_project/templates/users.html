@@ -28,7 +28,7 @@
     {% endif %}
 
     <h2>New User signup</h2>
-    <form action='/' method="post">
+    <form action='/' method="POST">
         {% csrf_token %}
         {{form_t.as_p}}
         <input type="submit" value="Submit">
