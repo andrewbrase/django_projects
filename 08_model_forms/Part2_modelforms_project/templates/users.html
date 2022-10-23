@@ -12,7 +12,7 @@
     <h1>Users</h1>
     <h2><a href='/'>Go to the home page</a></h2>
 
-    {% if users_t %}
+    <!-- {% if users_t %}
 
     <ol>
         {% for person in users_t %}
@@ -25,7 +25,15 @@
         {% endfor %}
     </ol>
 
-    {% endif %}
+    {% endif %} -->
+
+    <h2>New User signup</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{form_t.as_p}}
+        <input type="submit" class="btn bty-primary" value="Submit">
+    </form>
+
 </body>
 
 </html>
