@@ -53,3 +53,50 @@ class FormName(forms.Form):
             raise forms.ValidationError('Emails do not match!')
 
     # more documentation here https://docs.djangoproject.com/en/4.1/ref/forms/validation/
+ 
+    # we've seen how we can use Django Forms to grab information 
+    # from the user and then do something with it, like print it 
+    # to the console, but what if we wanted to save it to a model?
+
+    # Instead of inheriting from the forms.Forms class, we will use forms.ModelForm in our forms.py file
+    # This helper class allows us to create a form from a pre-existing model
+    # - We then add an inline class(something we haven't seen before) called Meta
+    # - This Meta class provides information connecting the model to the form
+
+    # Example:
+
+    # from django import forms
+    # from myapp.models import MyModel
+
+    # class MyNewForm(forms.ModelForm):
+    #   #Form Fields go here
+
+    #   class Meta:
+    #       # form fields go here /with validators params
+    #       model = MyModel
+    #       fields = #lets see the options!
+
+            # the fields attribute will connect to the model
+            # there are many ways to make that connection
+            # you first need to think about security for the fields,
+            # its common to not provide any addtional field info, 
+            # since you're already matching up the form to match up with the model
+            # exactly, you don't actually need to specify those fields,
+            # so typically you'll just see the inline Meta class after the forms class
+
+            # the methods to work with the fields attribute that's inside of the inline Meta class
+            # option 1) set it the special keyword "__all__" - this grabs all the fields from the model and you're going to place them into the form
+            # option 2) specify the fields that you actually want to exclude
+
+            # from django import forms
+            # from myapp.models import Mymodel
+            # class MyNewForm(forms.ModelForm):
+                # Form Fields go here
+                # class Meta:
+                    # model = MyModel
+         # (option 2) exclude = ["field1","field2"]
+
+            # option 3) list the included fields
+            # fields = ("field1","field2")
+
+            # 4:54
