@@ -24,11 +24,16 @@ def form_name_view(request):
             print('NAME: ' + form.cleaned_data['name'])
             print('EMAIL: ' + form.cleaned_data['email'])
             print('TEXT: ' + form.cleaned_data['text'])
+
+            # >
             # [22/Oct/2022 20:21:44] "GET /formpage/ HTTP/1.1" 200 1348
             # form validation successful
             # Andrew
             # andrewbrase1@yahoo.com
             # test
             # [22/Oct/2022 20:21:49] "POST /formpage/ HTTP/1.1" 200 1398
+
+            # django has built in validators you can use to 
+            # validate your forms (or check for bots)
 
     return render(request, 'form_page.html', {'form_t' : form})
