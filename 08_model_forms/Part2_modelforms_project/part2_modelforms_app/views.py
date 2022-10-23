@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from part2_modelforms_app.forms import UserForm
-# from part2_modelforms_app.models import User
+from part2_modelforms_app.models import User
 # from . import forms
 
 # Create your views here.
@@ -9,6 +9,7 @@ def index(request):
     return render(request, 'index.html')
 
 def users(request):
+    user_list = User.objects.order_by('first_name')
     form = UserForm()
 
     if request.method == 'POST':
@@ -20,7 +21,7 @@ def users(request):
         else:
             print('Error, form is invalid')
 
-    return render(request, 'users.html', context= {'form_t' : form})
+    return render(request, 'users.html', context= {'form_t' : form, 'users_t': user_list})
 
     # form = forms.UserForm()
 
