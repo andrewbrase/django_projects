@@ -11,9 +11,11 @@ def index(request):
 def users(request):
     user_list = User.objects.order_by('first_name')
     form = UserForm()
+    print('test1')
 
     if request.method == 'POST':
         form = UserForm(request.POST)
+        print('test2')
 
         if form.is_valid():
             form.save(commit=True)
@@ -46,4 +48,3 @@ def users(request):
 #     new_user = User(first_name=first, last_name=last, email=new_email)
 #     new_user.save()
 #     return render(request, 'index.html')
-
