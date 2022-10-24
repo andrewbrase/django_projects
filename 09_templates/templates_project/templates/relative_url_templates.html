@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relative</title>
+</head>
+<body>
+    <h1>Welcome to Relative Url Templates</h1>
+    <!-- we want this to be relative -->
+    <a href="{% url 'index' %}">Index Page</a>
+    <a href="{% url 'templates_app:other' %}">Others Page</a>
+    <a href="{% url 'admin:index' %}">Admin page</a>
+</body>
+</html>
