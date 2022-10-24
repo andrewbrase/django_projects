@@ -279,15 +279,54 @@
 #         # perform some action
 #         print(self.param1)
 
-class Student():
-    def __init__(self,mystudent_name,myclass_name,myschool_name):
-        self.student_name = mystudent_name
-        self.class_name = myclass_name
-        self.school_name = myschool_name
+# class Student():
+#     def __init__(self,mystudent_name,myclass_name,myschool_name):
+#         self.student_name = mystudent_name
+#         self.class_name = myclass_name
+#         self.school_name = myschool_name
 
-    def printStudent(self):
-        print(f'{self.student_name} is a {self.class_name} and goes to school at {self.school_name}')
+#     def printStudent(self):
+#         print(f'{self.student_name} is a {self.class_name} and goes to school at {self.school_name}')
 
-Allan = Student('Allan','Freshman','Highland High School')
-Allan.printStudent()
+# Allan = Student('Allan','Freshman','Highland High School')
+# Allan.printStudent()
 # Allan is a Freshman and goes to school at Highland High School
+
+
+
+
+class Animal:
+    def __init__(self, is_animal):
+        self.is_animal = is_animal
+    
+    def printAnimal():
+        print('this is an animal')
+
+# dog will inherit animal method printAnimal
+class Dog(Animal):
+    # CLASS OBJECT ATTRIBUTE
+    # This will be the same for every instance of the class
+    type = 'mammal'
+
+    def __init__(self,dogName,dogBreed,spots):
+        self.dog_name = dogName
+        self.dog_breed = dogBreed
+        self.dog_spots = spots
+
+    # Python also has a super() function that will make the child class inherit 
+    # all the methods and properties from its parent:
+    # In Python, super() has two major use cases:
+    # Allows us to avoid using the base class name explicitly
+    # Working with Multiple Inheritance   
+
+    def printSpots(self):
+        if self.dog_spots:
+            print(f'{self.dog_name} is my {self.dog_breed} and has spots' )
+        else:
+            print(f'{self.dog_name} is my {self.dog_breed} and does not have spots' )
+
+Sammy = Dog('Sammy', 'Poodle', False)
+Sammy.printSpots()
+Sammy.printAnimal()
+
+# Sammy is my Poodle and does not have spots
