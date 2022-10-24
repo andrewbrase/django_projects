@@ -260,9 +260,34 @@
 # 300
 
 # using the zip function to take in iterables and aggregate them in a tuple
-languages = ['Java', 'Python', 'Javascript']
-versions = [14, 3, 6]
+# languages = ['Java', 'Python', 'Javascript']
+# versions = [14, 3, 6]
 
-result = zip(languages, versions)
-print(list(result))
+# result = zip(languages, versions)
+# print(list(result))
 # [('Java', 14), ('Python', 3), ('Javascript', 6)]
+# ~~~~~~~~~~~~~~~~~
+
+# obj syntax
+# class NameOfClass():
+    
+#     def __init__(self,param1,param2):
+#         self.param1 = param1
+#         self.param2 = param2
+
+#     def some_method(self):
+#         # perform some action
+#         print(self.param1)
+
+class Student():
+    def __init__(self,mystudent_name,myclass_name,myschool_name):
+        self.student_name = mystudent_name
+        self.class_name = myclass_name
+        self.school_name = myschool_name
+
+    def printStudent(self):
+        print(f'{self.student_name} is a {self.class_name} and goes to school at {self.school_name}')
+
+Allan = Student('Allan','Freshman','Highland High School')
+Allan.printStudent()
+# Allan is a Freshman and goes to school at Highland High School
