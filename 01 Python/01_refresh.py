@@ -292,14 +292,11 @@
 # Allan.printStudent()
 # Allan is a Freshman and goes to school at Highland High School
 
-
-
-
 class Animal:
     def __init__(self, is_animal):
         self.is_animal = is_animal
     
-    def printAnimal():
+    def printAnimal(self):
         print('this is an animal')
 
 # dog will inherit animal method printAnimal
@@ -319,14 +316,14 @@ class Dog(Animal):
     # Allows us to avoid using the base class name explicitly
     # Working with Multiple Inheritance   
 
-    def printSpots(self):
+    def printSpots(self, number):
         if self.dog_spots:
-            print(f'{self.dog_name} is my {self.dog_breed} and has spots' )
+            print(f'{self.dog_name} is my {self.dog_breed} and has {number} spots' )
         else:
             print(f'{self.dog_name} is my {self.dog_breed} and does not have spots' )
 
-Sammy = Dog('Sammy', 'Poodle', False)
-Sammy.printSpots()
+Sammy = Dog('Sammy', 'Poodle', True)
+Sammy.printSpots(4)
 Sammy.printAnimal()
 
-# Sammy is my Poodle and does not have spots
+# Sammy is my Poodle and has 4 spots
