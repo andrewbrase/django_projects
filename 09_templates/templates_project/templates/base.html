@@ -3,3 +3,58 @@ top of our page, it wouldn't make sense to continually have the same navbar HTML
 instead we set it to the base.html file and inherit it using template inheritance. This idea is sometimes also known
 as template extending, as in extending the base.html to other .html files. The inheritance doesn't need to just be 
 limited to one base.html file, you can extend multiple templates -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- to have the link for bootstrap, it's easier to have it in the base.html 
+    file so that you don't have to add it to every single page -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <!-- <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a class="navbar-brand" href="">Brand</a></li>
+                <li><a class="navbar-link" href="">Index</a></li>
+                <li><a class="navbar-link" href="">Other</a></li>
+                <li><a class="navbar-link" href="">Relative</a></li>
+                <li><a class="navbar-link" href="">Admin</a></li>
+            </ul>
+        </div>
+    </nav> -->
+
+    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'index' %}">Index</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'templates_app:other' %}">Other</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'templates_app:relative' %}">Relative</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    {% block body_block %}
+    <!-- anything outside of this will be inherited if you extend -->
+    {% endblock %}
+
+</body>
+</html>
