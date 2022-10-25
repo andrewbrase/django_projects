@@ -1,0 +1,23 @@
+Django Template filters
+
+if you had some information from your model 
+that you wished to use across various views/pages, 
+But perhaps you wanted to make a slight edit to the 
+information before injecting it, like string 
+operations, or arithmetic
+
+ex. on one page have it be all uppercase,
+on another page all lowercase
+
+Django provides ways to implement template 
+filters that allow you to effect the injection 
+before dispalying it to the user. This allows 
+for flexibility from a single source
+
+the general form for a template filter is:
+
+{{ value | filter:'parameter' }}
+- not all filters take in parameters
+many of these filters are based off of common 
+built-in Python functions so you will be already 
+familiar with them
