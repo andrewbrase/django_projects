@@ -9,3 +9,10 @@ class AccountForm(forms.ModelForm):
     class Meta:
         model = Account
         fields = '__all__'
+
+    def clean(self):
+        # if you use super you will grab all of the data at once
+        # all_clean_data = super().clean()
+
+        if Account.objects.filter(email=self.cleaned_data['email']).exists():
+            raise forms.ValidationError("The given email is already registered")
