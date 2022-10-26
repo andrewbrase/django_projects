@@ -21,3 +21,15 @@ the general form for a template filter is:
 many of these filters are based off of common 
 built-in Python functions so you will be already 
 familiar with them
+
+ex. {{ django|title }}
+
+(context)
+{'django','the web framework for perfectionists with deadlines'}
+
+- title is a python string operation that capitalizes the first letter 
+of every word in a string
+
+result: The Web Framework For Perfectionists With Deadlines
+- some filters take an argument
+{{ my_date|date:"Y-m-d" }}
