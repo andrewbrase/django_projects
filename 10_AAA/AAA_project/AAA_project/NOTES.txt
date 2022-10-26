@@ -1,0 +1,37 @@
+We will discuss the general set-up 
+to begin getting ready for User 
+Authentication
+
+We'll talk about passwords in general
+and also discuss some additional 
+library options for security
+
+in the INSTALLED_APPS list in settings.py,
+you need to have these two apps:
+django.contrib.auth 
+django.contrib.contenttypes
+
+the next thing we need to do is make 
+sure we store our passwords safely
+NEVER store passwords in plain text!
+We will begin by using the default
+PBKDF2 algorithm with an SHA256 hash
+that's built into django
+
+ther are other methods as well, we will
+also show how to use the bcrypt and Argon2.
+in your virtual environment
+pip install bcrypt
+pip install django[argon2]
+
+inside of settings.py you can then pass in 
+the list of PASSWORD_HASHERS to try in the 
+order you want to try them.
+
+Sometimes users will also try to use a very 
+weak password, such as password123
+We can also add in validator options to prevent 
+a user from doing that.
+We'll keep things simple and only require a 
+minimum length for now 
+
