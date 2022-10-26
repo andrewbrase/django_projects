@@ -1,15 +1,10 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AAA Login</title>
-</head>
-<body>
+{% block body %}
     <h1>Log in</h1>
+    <br>
     <input type="text" placeholder="User name">
     <input type="password" placeholder="Password">
-    <h2><a href="{% url 'AAA_app:signup' %}">Sign up</a></h2>
-</body>
-</html>
+    <br><br>
+    <h3><a href="{% url 'AAA_app:signup' %}">Sign up</a></h3>
+{% endblock %}
