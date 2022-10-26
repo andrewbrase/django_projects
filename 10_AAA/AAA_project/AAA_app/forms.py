@@ -9,11 +9,3 @@ class AccountForm(forms.ModelForm):
     class Meta:
         model = Account
         fields = '__all__'
-
-# class UserForm(forms.ModelForm):
-#     first_name = forms.CharField(max_length=50)
-#     last_name = forms.CharField(max_length=50)
-#     email = forms.EmailField(max_length=100)
-#     class Meta:
-#         model = User
-#         fields = '__all__'
