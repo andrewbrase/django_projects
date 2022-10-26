@@ -2,7 +2,14 @@
 // >sass --watch style.scss:style.css
 
 .body-class {
-    background-color: aqua;
     float: right;
+    border-radius: 15px;
+    padding: 40px;
+    background-color: rgb(231, 231, 231);
+
+    input {
+        float: right;
+        margin-left: 10px;
+    }
   }
   

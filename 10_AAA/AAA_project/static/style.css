@@ -1,7 +1,12 @@
 .body-class {
-    border-radius: 15px;
-    padding: 10px;
-    background-color: rgb(231, 231, 231);
+  float: right;
+  border-radius: 15px;
+  padding: 40px;
+  background-color: rgb(231, 231, 231);
+}
+.body-class input {
+  float: right;
+  margin-left: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
