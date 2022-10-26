@@ -1,11 +1,38 @@
 // >sass style.sass:style.css
 // >sass --watch style.scss:style.css
 
+.navweb {
+    padding: 5px;
+    border-radius: 15px;
+    background-color: aliceblue;
+    display: flex;
+
+    h1 {
+        margin-left: 10px;
+    }
+
+    ul {
+        margin-top: 10px;
+        font-size: 20px;
+
+        a {
+            margin-left: 15px;
+            text-decoration: none;
+        }
+    }
+}
+
 .body-class {
     float: right;
     border-radius: 15px;
+    margin-top: 20px;
     padding: 40px;
     background-color: rgb(231, 231, 231);
+    width: 478px;
+    
+    li {
+        color: rgb(192, 53, 53);
+    }
 
     input {
         float: right;
