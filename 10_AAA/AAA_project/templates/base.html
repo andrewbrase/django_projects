@@ -13,33 +13,24 @@
 </head>
 
 <body>
+
     <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'index' %}">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'AAA_app:signup' %}">Sign Up</a>
-                </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
-                </li> -->
+    
+        <div class="navweb">
+            <h1>Website</h1>
+            <ul>
+            <a href="{% url 'index' %}">Login</a>
+            <a href="{% url 'AAA_app:signup' %}">Sign Up</a>
+            <a href="{% url 'admin:index' %}">Admin</a>
             </ul>
-    </nav>
+        </div>
 
-    <div class="body-class">
-    {% block body %}
-    {% endblock %}
+        <div class="body-class">
+            {% block body %}
+            {% endblock %}
+        </div>
+
     </div>
-
-</div>
 
 </body>
 

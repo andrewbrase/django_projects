@@ -15,4 +15,5 @@ class AccountForm(forms.ModelForm):
         # all_clean_data = super().clean()
 
         if Account.objects.filter(email=self.cleaned_data['email']).exists():
+            # change this
             raise forms.ValidationError("The given email is already registered")
