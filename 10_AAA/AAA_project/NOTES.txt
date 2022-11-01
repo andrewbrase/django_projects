@@ -1,1 +1,6 @@
 Django Passwords
+
+In this lecture we will discuss the general set-up to begin getting ready 
+for User Authentication. We'll talk about passwords in general and also 
+discuss some additional library options for security
+
