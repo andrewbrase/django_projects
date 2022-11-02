@@ -7,7 +7,7 @@ class UserProfileInfo(models.Model):
     # this almost extends the class, 
     # do not inherit from the User class 
     # - it does not have multiple instances of this class
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     # additional attributes
     portfolio_site = models.URLField(blank=True)
