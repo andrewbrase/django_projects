@@ -32,3 +32,83 @@ We can also add in validator options to prevent
 a user from doing that.
 We'll keep things simple and only require a 
 minimum length for now 
+
+~~~
+
+- We will discuss how to use django's built in tools to create
+User Authentication Models
+
+- We will also discuss how to set up media files in your project 
+
+previously when we've logged on to the admin page we've seen that 
+there is already a built in authentication and authorizations model 
+set in place. In this database there were "Users"
+
+The User object has a few key features
+- Username
+- Email
+- Password
+- First Name
+- Surname
+
+There are also some other attributes for the User object, such as 
+is_active, 
+is_staff, 
+is_superuser
+(etc)
+
+Sometimes you'll want to add more attributes to a user, such as their 
+own links or a profile image
+
+you can do this in your applications models.py file by creating another 
+class that has a relationship to the User class
+
+this is what the code would look like in the models.py file
+
+~~~
+from django.contrib.auth.models import User 
+
+# Create your models here
+class UserProfileInfo(models.Model):
+
+    # Create relationship (don't inherit from the User)
+    {***you create a one to one relationship - what that 
+    means is this extra user profile info has a direct 1 
+    to 1 connection to the User model}
+
+    user = models.OneToOneField(User)
+
+    # Add any additional attributes you want
+    portfolio = models.URLField(blank=True)
+    picture = models.ImageField(upload_to='profile_pics")
+
+    def __str__(self):
+        # Built-in attribute of django.contirb.auth.models.User !
+        return self.user.username
+        # if you ever print out the user - it will print out their name
+
+In order to work with images in python we have to install pillow library
+>pip install pillow
+
+- Once you've created this model you'll have to remember to register it in the admin.py file, with something like:
+admin.site.register(UserProfileInfo)
+***that would be imported from the models.py file
+
+-Typically images,CSS,JS, etc all go in the static folder of the project, 
+with te STATIC_ROOT variable path defined inside the settings.py file 
+-User uploaded content will go to the media folder, with the MEDIA_ROOT
+
+Once you've set up your models, you want to set up the actula form, 
+you want to implement a django form 
+
+***Inside the forms.py file
+from django import forms
+from basic_app.models imprt UserProfileInfo
+
+class UserProfileInfoForm(forms.ModelForm):
+    portfolio = forms.URLField(required=False)
+    picture = forms.ImageField(required=False)
+
+    class Meta():
+        model = UserProfileInfo 
+        exclude = ('user',)
