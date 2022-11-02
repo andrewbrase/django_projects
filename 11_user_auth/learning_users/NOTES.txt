@@ -112,3 +112,9 @@ class UserProfileInfoForm(forms.ModelForm):
     class Meta():
         model = UserProfileInfo 
         exclude = ('user',)
+
+***Note from teacher
+Hi Everyone,
+A quick note to watch out for in the next lecture. I accidentally named a form the same name as the model. Specifically the UserProfileInfo model. The ModelForm that relates to it should have a different name, like: UserProfileInfoForm. This is fixed in the Registration lecture (I talk about it and point it out) and it is also correct in the downloaded note files. So keep this in mind when you see me create that second form!
+Feel free to post any questions to the QA forums.
+-Jose
