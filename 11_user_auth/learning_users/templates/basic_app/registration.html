@@ -12,8 +12,8 @@
         <!-- enctype="multipart/form-data" make sure you have this otherwise the image won't upload -->
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ user_form.as_p}}
-            {{ profile_form.as_p}}
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
             <input type="submit" name="" value="Register">
 
         </form>
