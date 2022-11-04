@@ -22,14 +22,13 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)5as!8*d$@^69n7t9(z11!!#-dlmt37k+_^cd)129w*v508i*u'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+from decouple import config
+SECRET_KEY = config("SECRET_KEY")
 
 ALLOWED_HOSTS = []
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
 # Application definition
 
